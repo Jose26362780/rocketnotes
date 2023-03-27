@@ -1,4 +1,4 @@
-import { FiPlus, FiSearch } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi';
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 
 
@@ -29,14 +29,14 @@ export function Home(){
 
             <Search>
 
-                <Input placeholder="Pesquisar pelo titulo" icon={FiSearch}/>
+                <Input placeholder="Pesquisar pelo titulo" />
 
             </Search>
 
             <Content>
                 <Section title= "Minhas notas">
                     <Note  data={{
-                        title: 'React Modal',
+                        title: 'React',
                         tags: [
                             {id: '1', name: 'react'},
                             {id: '2', name: 'rocketseat'},
@@ -47,7 +47,7 @@ export function Home(){
                 </Section>
             </Content>
 
-            <NewNote>
+            <NewNote to="/new">
                 <FiPlus/>
                     Criar Nota
     

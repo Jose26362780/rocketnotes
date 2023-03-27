@@ -22,6 +22,14 @@ export const Container = styled.div`
         background: none;
      }
 
+     .button-delete {
+      color: ${({ theme }) => theme.COLORS.RED};
+     }
+
+     .button-add {
+      color: ${({ theme }) => theme.COLORS.ORANGE};
+     }
+
 
      > input {
         height: 56px;

@@ -11,7 +11,7 @@ export function Header(){
 
         <Container>
 
-            <Profile>
+            <Profile to="/profile">
                 <img 
                 src="https://github.com/Jose26362780.png"
                 alt='Foto do jose' />
