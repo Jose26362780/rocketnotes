@@ -58,13 +58,15 @@ export function New(){
             return alert("Digite o titulo da nota ");
         }
 
+        if(newLink){
+            return alert("Você deixou uma link no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.");
+        }
+
         if(newTag){
             return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.");
         }
 
-        if(newLink){
-            return alert("Você deixou uma link no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.");
-        }
+       
         await api.post("/notes", {
             title,
             description,
