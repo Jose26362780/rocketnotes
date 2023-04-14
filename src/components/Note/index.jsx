@@ -1,10 +1,10 @@
 import { Container } from './styles';
 import { Tag } from '../Tag';
 
-export function Note({ data, ...rest}) {
+export function Note({ data,onClick, ...rest}) {
 
     return(
-        <Container>
+        <Container {... rest}>
             <h1>{data.title}</h1>
 
             {
@@ -12,7 +12,9 @@ export function Note({ data, ...rest}) {
 
                 <footer>
                     {
-                        data.tags.map( tag => <Tag key={tag.id}  title={tag.name}/>)
+                        data.tags.map( tag => <Tag key={tag.id}  title={tag.name}
+                        onClick={onClick}
+                        />)
                     }
                 </footer>
             }
