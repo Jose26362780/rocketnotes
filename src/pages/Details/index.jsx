@@ -24,14 +24,23 @@ import { ButtonText } from '../../components/ButtonText';
         const navigate = useNavigate();
 
         function handleBack(){
-            navigate("/");
+            navigate(-1);
         }
 
-        async function handleRemove(){
-            const confirm = window.confirm("Deseja realmente remover a nota?");
+
+
+
+
+        function handleBack(){
+            navigate(-1);
+        }
+
+       async function handleRemove(){
+            const confirm = window.confirm("Deseja realmente remover a nota");
 
             if(confirm){
                 await api.delete(`/notes/${params.id}`);
+                navigate("/");
             }
         }
 
@@ -39,7 +48,6 @@ import { ButtonText } from '../../components/ButtonText';
             async function fetchNote(){
                 const response = await api.get(`/notes/${params.id}`);
                 setData(response.data);
-                navigate("/");
             }
 
             fetchNote();
@@ -54,9 +62,8 @@ import { ButtonText } from '../../components/ButtonText';
               data &&  
             <main>
                 <Content>
-                    <ButtonText 
-                        title = "Excluir nota"
-                        onClick ={handleRemove}
+                    <ButtonText title = "Excluir nota"
+                    onClick={handleRemove}
                     /> 
 
                     <h1>
