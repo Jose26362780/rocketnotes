@@ -27,6 +27,7 @@ export function Profile(){
  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
  const [ avatar, setAvatar ] =  useState(avatarUrl);
  const [ avatarFile, setAvatarFile ] =  useState(null);
+ 
  const navigate = useNavigate();
 
  function handleBack(){
@@ -36,13 +37,17 @@ export function Profile(){
 
 
  async function handleUpdate(){
-     const user = {
+     const updated = {
      name,
      email,
      password: passwordNew,
-     old_password: passwordOld,
-     }
-    await updateProfile({ user, avatarFile });
+     old_password: passwordOld
+     };
+
+     const userUpdated = Object.assign(user, updated);
+     
+
+    await updateProfile({ user: userUpdated, avatarFile });
  }
 
  function handleChangeAvatar(event){
